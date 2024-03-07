@@ -4,16 +4,11 @@ import java.util.Date;
 
 public class Fecha {
   int ano, mes, dia, hora, minuto;
-  Fecha() {
-		 Calendar calendario=Calendar.getInstance();  //Calendar: clase abstracta
-		 Date fecha=calendario.getTime();
-		 calendario.setTime(fecha);
-		 ano=calendario.get(Calendar.YEAR);
-		 mes=calendario.get(Calendar.MONTH)+1;
-		 dia=calendario.get(Calendar.DAY_OF_MONTH);
-		 hora=calendario.get(Calendar.HOUR_OF_DAY);
-		 minuto=calendario.get(Calendar.MINUTE);
-	}
+  Fecha(int ano, int mes, int dia){
+	  this.ano=ano;
+	  this.mes=mes;
+	  this.dia=dia;
+  }
 
   	boolean menor90minutos(Fecha fPosterior) {
   		boolean ok=false;
@@ -35,7 +30,7 @@ public class Fecha {
     }
 
 	public static void main(String[] args) {
-		Fecha f= new Fecha();
+		Fecha f= new Fecha(1,11,1);
 		System.out.println(f.ano+":"+f.mes+":"+f.dia+":"+f.hora+":"+
 		f.minuto);
 	}
